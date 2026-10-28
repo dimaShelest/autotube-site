@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Voz sin Firma — Stories told in 3D</title>
+<meta name="description" content="Voz sin Firma: a Spanish-language YouTube channel of true stories and viewer stories told with 3D animation. Also describes autotube, the tool the channel owner uses to upload their own videos.">
+<link rel="canonical" href="https://dimashelest.github.io/autotube-site/en/">
+<link rel="alternate" hreflang="es" href="https://dimashelest.github.io/autotube-site/">
+<link rel="alternate" hreflang="en" href="https://dimashelest.github.io/autotube-site/en/">
+<link rel="alternate" hreflang="x-default" href="https://dimashelest.github.io/autotube-site/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../favicon.svg" alt="" width="28" height="28">Voz sin Firma</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="submit.html">Send your story</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a class="lang" href="../index.html" hreflang="es" lang="es">Español</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <h1>Stories someone lived and nobody signed</h1>
+  <p class="lead"><strong>Voz sin Firma</strong> is a Spanish-language YouTube channel that tells stories with hand-made 3D animation (Blender): documented true stories and stories sent in by subscribers, always with the names changed.</p>
+  <div class="links">
+    <a class="button" href="https://www.youtube.com/@your-channel">Watch the channel on YouTube</a>
+    <a class="button button-alt" href="submit.html">Send your story</a>
+    <a href="privacy.html">Privacy policy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+
+  <h2 id="channel">The channel</h2>
+  <ul>
+    <li><strong>True stories.</strong> Documented events told in acts, with the sources cited in each video's description. Scenes that re-enact real events carry a «Recreación 3D» (3D reconstruction) label and are disclosed as altered or synthetic content on YouTube.</li>
+    <li><strong>Subscriber stories.</strong> Stories that viewers send through <a href="submit.html">this form</a>. Before using them we review and adapt them and change names, places, dates and anything that could identify someone. On screen they are labelled «Historia enviada por un suscriptor, nombres cambiados» (story sent by a subscriber, names changed). Submissions are never paid or rewarded.</li>
+    <li>The images are 3D animation made for the channel (no AI-generated images); narration uses text-to-speech (TTS). Third-party 3D models are CC0 or CC BY, credited in the description.</li>
+  </ul>
+
+  <div class="card">
+    <p><strong>Have a story?</strong> Tell us anonymously at <a href="submit.html">Send your story</a>. You get a code to <a href="delete.html">delete it</a> whenever you want. No tracking cookies, no analytics.</p>
+  </div>
+
+  <h2 id="autotube">The autotube application</h2>
+  <p><strong>autotube</strong> is a command-line tool that runs only on the channel owner's computer. It produces the videos and prepares a publishing package (video, Shorts, thumbnail, title, description, tags). With the owner's OAuth authorization it uploads that package to <strong>the owner's own channel</strong> through the YouTube Data API v3:</p>
+  <ol>
+    <li>uploads the main video and its Shorts (resumable upload) with the configured privacy status — private by default — and, optionally, a scheduled publish time;</li>
+    <li>sets the custom thumbnail of the main video;</li>
+    <li>looks up the series playlist among the channel's own playlists, creates it if it does not exist, and adds the videos to it.</li>
+  </ol>
+
+  <h3>Who uses it?</h3>
+  <p>Only the channel owner, with their own Google account. autotube is not a web service: it has no public sign-up, no other users, and it does not access other people's or other channels' data through the YouTube API.</p>
+
+  <h3>Google permissions (scopes) and what they are used for</h3>
+  <div class="table-wrap">
+    <table>
+      <caption>The OAuth client type is "Desktop app"; the authorization response is received by a temporary local server on 127.0.0.1.</caption>
+      <thead><tr><th scope="col">Scope</th><th scope="col">Use in autotube</th></tr></thead>
+      <tbody>
+        <tr><td><code>https://www.googleapis.com/auth/youtube.upload</code></td><td>Upload the channel's videos (<code>videos.insert</code>) and their custom thumbnail (<code>thumbnails.set</code>).</td></tr>
+        <tr><td><code>https://www.googleapis.com/auth/youtube</code></td><td>Manage the series playlist: list the channel's own playlists (<code>playlists.list</code>, <code>mine=true</code>), create it if missing (<code>playlists.insert</code>) and add the videos (<code>playlistItems.insert</code>).</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>What autotube does not do</h3>
+  <ul>
+    <li>It does not read comments, analytics, subscribers or any viewer data through the YouTube API.</li>
+    <li>It does not request the Google account's e-mail address or profile.</li>
+    <li>It does not modify or delete videos that are already published.</li>
+    <li>It does not share data with third parties and contains no advertising or analytics.</li>
+  </ul>
+
+  <h3>Data it stores</h3>
+  <p>Everything is stored only on the owner's computer: the OAuth refresh token (file mode 600), the IDs of uploaded videos, and a local log of API quota usage that autotube uses to stay under the configured daily limit. Stories sent through the form are a separate processing activity, unrelated to the YouTube API. Details are in the <a href="privacy.html">privacy policy</a>.</p>
+
+  <div class="card">
+    <p><strong>Revoking access:</strong> the owner can withdraw the permission at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> and delete the token file from their computer.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="submit.html">Send your story</a></li>
+      <li><a href="delete.html">Delete a story</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="https://www.youtube.com/@your-channel">YouTube channel</a></li>
+      <li><a href="mailto:contact@example.com">contact@example.com</a></li>
+      <li><a href="../index.html" hreflang="es" lang="es">Español</a></li>
+    </ul>
+    <p>Last updated: <time datetime="2026-10-28">28 October 2026</time></p>
+    <p>Voz sin Firma is not affiliated with Google or YouTube. YouTube is a trademark of Google LLC.</p>
+  </div>
+</footer>
+</body>
+</html>

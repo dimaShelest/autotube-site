@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Política de privacidad — Voz sin Firma</title>
+<meta name="description" content="Cómo trata Voz sin Firma las historias enviadas por suscriptores (RGPD) y qué datos de YouTube usa la aplicación autotube. Sin cookies de seguimiento, sin venta de datos.">
+<link rel="canonical" href="https://dimashelest.github.io/autotube-site/privacy.html">
+<link rel="alternate" hreflang="es" href="https://dimashelest.github.io/autotube-site/privacy.html">
+<link rel="alternate" hreflang="en" href="https://dimashelest.github.io/autotube-site/en/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://dimashelest.github.io/autotube-site/privacy.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="28" height="28">Voz sin Firma</a>
+    <nav class="site-nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="enviar.html">Envía tu historia</a></li>
+        <li><a href="privacy.html" aria-current="page">Privacidad</a></li>
+        <li><a href="terms.html">Términos</a></li>
+        <li><a class="lang" href="en/privacy.html" hreflang="en" lang="en">English</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <h1>Política de privacidad</h1>
+  <p class="meta">Última actualización: <time datetime="2026-10-28">28 de octubre de 2026</time> · versión del consentimiento <code>2026-10-27</code></p>
+  <p class="lead">Esta política cubre tres cosas: (A) las <a href="#historias">historias que nos envían los suscriptores</a> por el formulario, (B) la <a href="#autotube">aplicación autotube</a> y los datos de la API de YouTube, y (C) <a href="#web">este sitio web</a>. En resumen: pedimos lo mínimo, lo anonimizamos antes de usarlo, lo borramos pronto y no lo vendemos ni lo compartimos.</p>
+
+  <h2 id="responsable">1. Responsable</h2>
+  <p>Responsable del tratamiento: <strong>[nombre del responsable — pendiente]</strong>, titular del canal Voz sin Firma (<a href="https://www.youtube.com/@your-channel">https://www.youtube.com/@your-channel</a>). Contacto para cualquier asunto de privacidad: <a href="mailto:contact@example.com">contact@example.com</a>.</p>
+
+  <h2 id="historias">A. Historias de suscriptores</h2>
+
+  <h3 id="a-datos">A1. Qué datos tratamos</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Dato</th><th scope="col">¿Obligatorio?</th><th scope="col">Para qué</th></tr></thead>
+      <tbody>
+        <tr><td>Texto de tu historia</td><td>Sí</td><td>Valorarla y, si la elegimos, adaptarla y publicarla anonimizada.</td></tr>
+        <tr><td>Seudónimo</td><td>No</td><td>Mencionarte en el video («Gracias a …»), solo si lo indicas.</td></tr>
+        <tr><td>Correo electrónico</td><td>No</td><td>Escribirte si necesitamos aclarar algo de la historia. Nunca publicidad ni envíos automáticos.</td></tr>
+        <tr><td>Confirmación de 18+ y del consentimiento, fecha y versión de este texto</td><td>Sí</td><td>Demostrar que diste tu consentimiento (art. 7.1 RGPD).</td></tr>
+        <tr><td>Huella de tu IP (HMAC-SHA-256 con clave secreta, recortada)</td><td>Automático</td><td>Limitar el número de envíos por hora y por día. La dirección IP en sí no se guarda.</td></tr>
+        <tr><td>Huella del código de borrado (SHA-256)</td><td>Automático</td><td>Que puedas borrar tu historia. El código solo se te muestra a ti, una vez.</td></tr>
+        <tr><td>Resultado de la verificación Turnstile</td><td>Automático</td><td>Comprobar que el envío no es de un robot (ver <a href="#c-turnstile">C2</a>).</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>No pedimos tu nombre, no hay cuentas de usuario y no usamos cookies propias. Te pedimos que <strong>no incluyas datos que identifiquen a otras personas</strong>; si los incluyes, los sustituimos (ver A4). Si tu historia contiene datos especialmente protegidos sobre ti (por ejemplo de salud), al enviarla consientes expresamente su tratamiento para esta finalidad (art. 9.2.a RGPD); puedes evitarlos o generalizarlos.</p>
+
+  <h3 id="a-base">A2. Finalidad y base jurídica</h3>
+  <ul>
+    <li><strong>Valorar, adaptar y publicar tu historia de forma anonimizada</strong> en los videos del canal: tu <strong>consentimiento</strong> (art. 6.1.a RGPD), que das marcando la casilla del formulario. Puedes retirarlo en cualquier momento borrando la historia con tu código o escribiéndonos; la retirada no afecta a lo hecho antes.</li>
+    <li><strong>Evitar el spam y los abusos</strong> (Turnstile, límites por huella de IP, campo trampa): nuestro <strong>interés legítimo</strong> en mantener el formulario utilizable (art. 6.1.f RGPD), con datos mínimos y borrado rápido.</li>
+  </ul>
+  <p>No tomamos decisiones automatizadas con efectos jurídicos sobre ti: unas reglas automáticas ayudan a ordenar y a detectar contenido problemático, pero una persona decide qué historias se usan.</p>
+
+  <h3 id="a-anonimizar">A3. Moderación</h3>
+  <p>Descartamos las historias que parecen inventadas o copiadas, las que acusan a personas o entidades reconocibles, las que contienen contenido ilegal, violencia explícita o autolesiones, y las que exponen a menores en situaciones de riesgo. Las historias enviadas por menores de 18 años se borran.</p>
+
+  <h3 id="a-minimizacion">A4. Minimización y anonimización</h3>
+  <ul>
+    <li>Nada más descargar tu historia del servidor al ordenador del titular, se borran del servidor el texto, el seudónimo, el correo y la huella de IP; allí solo quedan el identificador, las fechas y la huella del código (para que el código siga funcionando).</li>
+    <li>Antes de cualquier uso sustituimos <strong>nombres, apellidos, lugares, fechas, direcciones, teléfonos, correos, enlaces, matrículas y números de documentos</strong> por equivalentes ficticios y coherentes. La tabla de correspondencia es privada, se guarda solo en el ordenador del titular y nunca se publica ni se comparte.</li>
+    <li>El video cuenta una <strong>adaptación</strong>: puede resumir, dramatizar y cambiar detalles. En pantalla se indica «Historia enviada por un suscriptor, nombres cambiados».</li>
+    <li>Si en el futuro usamos un servicio de inteligencia artificial para ayudar a moderar o adaptar historias, solo recibirá el texto <strong>ya anonimizado</strong>, nunca tu correo ni tu seudónimo, y lo añadiremos a la lista de encargados de esta página antes de usarlo.</li>
+  </ul>
+
+  <h3 id="a-conservacion">A5. Conservación</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Dato</th><th scope="col">Plazo</th></tr></thead>
+      <tbody>
+        <tr><td>Texto, seudónimo y correo en el servidor (Cloudflare)</td><td>Hasta que el programa del titular los descarga (normalmente días); nunca más de 12 meses.</td></tr>
+        <tr><td>Historia no utilizada (copia de trabajo y tabla de nombres)</td><td><strong>12 meses</strong> desde el envío; después se borra.</td></tr>
+        <tr><td>Historia descartada</td><td><strong>30 días</strong> desde la decisión.</td></tr>
+        <tr><td>Historia utilizada: texto original, seudónimo, correo y tabla de nombres</td><td><strong>3 meses</strong> después de publicar el video, y como máximo 12 meses desde el envío.</td></tr>
+        <tr><td>Huella de IP</td><td>30 días como máximo (antes, si la historia se descarga). Contadores del límite de envíos: 48 horas.</td></tr>
+        <tr><td>Identificador, fechas y huella del código de borrado</td><td>12 meses desde el envío.</td></tr>
+        <tr><td>Registro de borrado (solo identificador y fecha, sin datos personales)</td><td>Hasta 400 días, para propagar el borrado a la copia de trabajo.</td></tr>
+        <tr><td>Video publicado</td><td>Es una adaptación anonimizada; permanece en el canal. Puedes pedir su retirada (ver A7).</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>El borrado en el servidor lo hace una tarea automática diaria; el de la copia de trabajo, el programa del titular cada vez que se sincroniza.</p>
+
+  <h3 id="a-encargados">A6. Quién trata los datos (encargados) y transferencias</h3>
+  <ul>
+    <li><strong>Cloudflare, Inc.</strong> — ejecuta el servidor del formulario (Workers), guarda los envíos en su base de datos D1 (ubicación preferente: Europa occidental) y presta la verificación antispam Turnstile. Actúa como encargado del tratamiento según su <a href="https://www.cloudflare.com/cloudflare-customer-dpa/">acuerdo de tratamiento de datos</a>; las posibles transferencias a EE. UU. se amparan en el Marco de Privacidad de Datos UE-EE. UU. y en cláusulas contractuales tipo.</li>
+    <li><strong>Alojamiento de las páginas</strong> (GitHub Pages y/o Cloudflare): sirven estas páginas y pueden registrar datos técnicos de acceso (como la IP) según sus propias políticas.</li>
+    <li>El ordenador del titular del canal, donde se modera y se adapta la historia.</li>
+  </ul>
+  <p><strong>No vendemos, no alquilamos y no cedemos</strong> tus datos a nadie, no los usamos para publicidad ni para crear perfiles, y no entrenamos modelos de IA con ellos.</p>
+
+  <h3 id="a-derechos">A7. Tus derechos</h3>
+  <p>Puedes ejercer los derechos de <strong>acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad</strong>, y <strong>retirar tu consentimiento</strong> en cualquier momento:</p>
+  <ul>
+    <li><strong>Supresión inmediata:</strong> en <a href="borrar.html">Borrar una historia</a> con tu código.</li>
+    <li><strong>Resto de derechos:</strong> escríbenos a <a href="mailto:contact@example.com">contact@example.com</a> indicando tu código de borrado. Como no te pedimos ningún dato de identidad, el código es la forma de comprobar que la historia es tuya (art. 11 RGPD). Respondemos en el plazo de un mes.</li>
+    <li>Si la historia ya se publicó, borramos el original y la tabla de nombres; el video es anonimizado, pero si nos pides retirarlo lo valoraremos de buena fe.</li>
+    <li>Puedes reclamar ante la <a href="https://www.aepd.es/">Agencia Española de Protección de Datos</a> o ante la autoridad de control de tu país.</li>
+  </ul>
+
+  <h3 id="a-edad">A8. Edad mínima</h3>
+  <p>El formulario es solo para mayores de 18 años. Si sabemos que una historia la envió un menor, la borramos.</p>
+
+  <h3 id="a-seguridad">A9. Seguridad</h3>
+  <p>Conexiones HTTPS; el código de borrado y la IP solo se guardan como huellas criptográficas; el acceso de descarga está protegido con un token secreto que solo tiene el programa del titular; el servidor no registra el contenido de las peticiones; la copia de trabajo y la tabla de nombres se guardan fuera de cualquier repositorio público.</p>
+
+  <h2 id="autotube">B. La aplicación autotube y los datos de YouTube</h2>
+  <p>autotube es la herramienta de escritorio con la que el titular sube los videos de Voz sin Firma a su propio canal. Solo la usa el titular, con su propia cuenta de Google. Contacto: <a href="mailto:contact@example.com">contact@example.com</a>.</p>
+
+  <h3 id="acceso">B1. Datos a los que accede</h3>
+  <p>autotube usa los Servicios de la API de YouTube (YouTube Data API v3) con OAuth 2.0 de Google, tipo de cliente «Aplicación de escritorio». El titular autoriza el acceso una sola vez en la pantalla de consentimiento de Google; la respuesta se recibe en un servidor local temporal en <code>127.0.0.1</code> de su propio ordenador. Se solicitan solo estos tres permisos:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Scope</th><th scope="col">Operaciones que realiza autotube</th></tr></thead>
+      <tbody>
+        <tr><td><code>https://www.googleapis.com/auth/youtube.upload</code></td><td><code>videos.insert</code> (subir los videos del titular), <code>thumbnails.set</code> (miniatura personalizada). <code>channelBanners.insert</code> y <code>watermarks.set</code> (abajo) admiten este permiso o el de <code>youtube</code>.</td></tr>
+        <tr><td><code>https://www.googleapis.com/auth/youtube</code></td><td><code>playlists.list</code> con <code>mine=true</code> (buscar por título la lista de reproducción de la serie entre las listas del propio canal), <code>playlists.insert</code> (crearla si no existe), <code>playlistItems.insert</code> (añadir los videos subidos); <code>videos.list</code> y <code>videos.delete</code> solo para las subidas de prueba PRIVADAS del propio programa (leer los metadatos que acaba de subir y después eliminar ese video de prueba).<br>Configuración del propio canal (<code>autotube channel setup</code> / <code>check</code>): <code>channels.list</code> con <code>mine=true</code> (leer el canal autorizado: identificador, título, identificador público @, descripción, palabras clave, país, idioma, URL del banner y de la foto de perfil, y estado: privacidad, vinculación, si puede subir videos largos, si está marcado como «para niños»); <code>channels.update</code> con <code>part=brandingSettings</code> (escribir la descripción, las palabras clave, el país, el idioma, el banner y, si se configura, el tráiler del canal); <code>channelBanners.insert</code> (subir la imagen del banner del canal); <code>watermarks.set</code> (subir la marca de agua que YouTube muestra en los videos del canal); <code>playlists.insert</code> también crea, una sola vez, las listas públicas de cada formato del canal.</td></tr>
+        <tr><td><code>https://www.googleapis.com/auth/youtube.force-ssl</code></td><td>Solo lectura de los comentarios de los videos del PROPIO canal, para recoger propuestas de temas (<code>autotube ideas collect</code>, como máximo una vez al día): <code>channels.list</code> con <code>mine=true</code> (la lista de subidas del canal), <code>playlistItems.list</code> (identificadores de los propios videos), <code>videos.list</code> con <code>part=statistics</code> (número de comentarios, para no releer un video sin cambios) y <code>commentThreads.list</code> (comentarios publicados y retenidos para revisión, con las respuestas que devuelve la API). <code>commentThreads.list</code> solo admite este permiso. autotube no escribe, responde, modera ni borra comentarios.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Aunque el permiso <code>youtube</code> es amplio, autotube solo lo utiliza para las operaciones indicadas. Los únicos datos que lee de YouTube son los identificadores y títulos de las listas de reproducción del propio canal, los metadatos de sus propias subidas (identificador, título, descripción, etiquetas y estado de privacidad) y la configuración pública y el estado del propio canal indicados arriba, para comprobar que coinciden con lo previsto. Coste en cuota de la API: lecturas 1 unidad; <code>channels.update</code>, <code>channelBanners.insert</code>, <code>watermarks.set</code>, <code>playlists.insert</code>, <code>playlistItems.insert</code>, <code>thumbnails.set</code> y <code>videos.delete</code> 50 unidades cada una; <code>videos.insert</code> 1600.</p>
+  <p>De los espectadores, autotube solo lee los comentarios que dejan en los videos del propio canal (permiso <code>youtube.force-ssl</code>, arriba) y guarda de ellos lo mínimo indicado en B2. autotube <strong>no</strong> accede a estadísticas de audiencia, suscriptores, otros canales ni otras cuentas, y no solicita el correo electrónico ni el perfil de Google. Las historias de suscriptores (parte A) llegan por el formulario de este sitio, no por la API de YouTube.</p>
+
+  <h3 id="almacenamiento">B2. Qué se guarda y dónde</h3>
+  <p>Todo se guarda <strong>únicamente en el ordenador del titular</strong>, dentro de la carpeta del proyecto autotube. Los datos de la API de YouTube no se guardan en ningún servidor.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Dato</th><th scope="col">Archivo local</th><th scope="col">Contenido</th></tr></thead>
+      <tbody>
+        <tr><td>Token OAuth</td><td><code>secrets/youtube_token.json</code></td><td>Token de acceso, token de actualización (refresh token), caducidad y permisos concedidos. Permisos de archivo 600 (solo el usuario propietario puede leerlo); la carpeta <code>secrets/</code> está excluida del control de versiones.</td></tr>
+        <tr><td>Resultado de la subida</td><td><code>publish/&lt;id&gt;/upload_result.json</code></td><td>Identificadores de los videos subidos, estado de privacidad solicitado y devuelto, identificador de la lista de reproducción y si la miniatura se estableció.</td></tr>
+        <tr><td>Estado y comprobación del canal</td><td><code>publish/channel_kit/state.json</code>, <code>setup.json</code>, <code>check.json</code></td><td>Identificador del canal, identificadores de las listas creadas, URL del banner subido, huella SHA-256 de las imágenes subidas, respuesta de <code>watermarks.set</code>, resultado de la comparación (coincide / no coincide) y la lista de pasos pendientes. Sin datos de espectadores.</td></tr>
+        <tr><td>Ideas de los comentarios</td><td><code>topics/ideas_store.json</code>, <code>topics/ideas_inbox.yaml</code></td><td>Solo de los comentarios que proponen un tema o apoyan una propuesta («+1»): identificador del comentario, nombre público del autor en YouTube, número de «me gusta», fecha, el tema extraído y una cita de 120 caracteres como máximo con enlaces, correos, @usuarios y números ocultos. El resto de comentarios se descarta al leerlo. No se guardan identificadores de canal, fotos ni correos. Permisos de archivo 600; excluidos del control de versiones.</td></tr>
+        <tr><td>Registro de cuota</td><td><code>logs/youtube_quota.jsonl</code></td><td>Fecha, hora, nombre de la operación y unidades de cuota gastadas. No contiene datos personales; sirve para no superar el límite diario configurado.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Además, el archivo <code>secrets/client_secret.json</code> contiene las credenciales del cliente OAuth de la propia aplicación (no datos de ningún usuario).</p>
+
+  <h3 id="uso">B3. Cómo se usan los datos</h3>
+  <p>Exclusivamente para subir los videos del titular a su propio canal, establecer sus miniaturas, organizarlos en las listas de reproducción del canal y configurar la presentación del propio canal (descripción, palabras clave, país, idioma, banner, marca de agua) y comprobar que está lista para publicar, y para recoger de los comentarios de los propios videos los temas que pide la audiencia (base jurídica: interés legítimo, art. 6.1.f RGPD). Si se produce un video con una de esas ideas, se agradece en pantalla y en la descripción con el nombre público de quien la propuso primero («Idea de @usuario»); nunca se ofrecen premios ni pagos por comentar. No se usan para publicidad, perfiles, venta de datos ni entrenamiento de modelos de inteligencia artificial.</p>
+
+  <h3 id="compartir">B4. Compartición con terceros</h3>
+  <p>Los datos no se venden, no se comparten y no se transfieren a nadie. autotube se comunica con la API de YouTube solo a través de los servidores de Google (<code>accounts.google.com</code>, <code>oauth2.googleapis.com</code>, <code>www.googleapis.com</code>). El token de actualización solo se envía al servidor de tokens de Google. autotube no incluye SDK de publicidad ni de analítica.</p>
+
+  <h3 id="retencion">B5. Conservación y eliminación</h3>
+  <ul>
+    <li>El token se conserva hasta que el titular lo elimina o revoca el acceso.</li>
+    <li>Para eliminar el acceso por completo: borre el archivo <code>secrets/youtube_token.json</code> y revoque el permiso de autotube en <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a> (página de permisos de la cuenta de Google). Tras la revocación, el token deja de funcionar.</li>
+    <li>Los resultados de subida, el estado del canal y el registro de cuota son registros locales que el titular puede borrar en cualquier momento eliminando los archivos indicados en B2.</li>
+    <li>Los videos y listas de reproducción quedan en YouTube bajo el control del titular, que los gestiona en YouTube Studio.</li>
+    <li>Ideas de los comentarios: cada video se vuelve a leer al menos cada 7 días y lo que no se ha actualizado en 30 días se borra; un comentario borrado en YouTube desaparece en la siguiente lectura; una idea rechazada pierde sus citas y nombres; el nombre de quien propuso una idea producida se conserva mientras se muestre el agradecimiento. Cualquier persona puede pedir que se quite su nombre o su cita escribiendo a <a href="mailto:contact@example.com">contact@example.com</a>.</li>
+  </ul>
+
+  <h3 id="seguridad">B6. Seguridad</h3>
+  <p>Toda la comunicación con Google usa HTTPS. El flujo OAuth usa un parámetro <code>state</code> aleatorio y una redirección local en <code>127.0.0.1</code>. El archivo del token tiene permisos 600 y nunca se publica ni se sube a un repositorio.</p>
+
+  <h3 id="google">B7. Servicios de Google y de YouTube</h3>
+  <p>autotube utiliza los Servicios de la API de YouTube. Al usar autotube, se aplican los <a href="https://www.youtube.com/t/terms">Términos del servicio de YouTube</a> y la <a href="https://policies.google.com/privacy">Política de privacidad de Google</a>.</p>
+  <div class="card">
+    <p>El uso y la transferencia a cualquier otra aplicación de la información recibida de las API de Google por parte de autotube se ajustarán a la <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de datos de usuario de los servicios de API de Google</a>, incluidos los requisitos de Uso limitado (Limited Use).</p>
+  </div>
+
+  <h2 id="web">C. Este sitio web</h2>
+  <h3 id="c-sin-cookies">C1. Sin cookies de seguimiento</h3>
+  <p>El sitio es estático: no usa cookies propias, analítica, publicidad ni rastreadores. Solo las páginas <a href="enviar.html">Envía tu historia</a> y <a href="borrar.html">Borrar una historia</a> ejecutan un pequeño script propio, que únicamente envía lo que escribes al servidor del formulario.</p>
+  <h3 id="c-turnstile">C2. Cloudflare Turnstile</h3>
+  <p>Para frenar el spam, la página del formulario carga Cloudflare Turnstile cuando empiezas a escribir. Turnstile procesa datos técnicos de tu navegador y de tu conexión (como la IP) para distinguir personas de robots, sin mostrar publicidad ni seguirte por otros sitios, y puede usar almacenamiento estrictamente necesario para esa comprobación. Es el único elemento de terceros del sitio. Más información: <a href="https://www.cloudflare.com/turnstile-privacy-policy/">política de privacidad de Turnstile</a>.</p>
+  <h3 id="c-alojamiento">C3. Alojamiento</h3>
+  <p>El proveedor de alojamiento (GitHub Pages y/o Cloudflare) puede registrar datos técnicos de acceso (por ejemplo, la dirección IP) según su propia política de privacidad.</p>
+
+  <h2 id="cambios">Cambios y contacto</h2>
+  <p>Si esta política cambia, se actualizará esta página, su fecha y la versión del consentimiento; los cambios importantes no se aplicarán a historias ya enviadas sin tu consentimiento. Para cualquier pregunta: <a href="mailto:contact@example.com">contact@example.com</a>.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="enviar.html">Envía tu historia</a></li>
+      <li><a href="borrar.html">Borrar una historia</a></li>
+      <li><a href="privacy.html">Privacidad</a></li>
+      <li><a href="terms.html">Términos</a></li>
+      <li><a href="https://www.youtube.com/@your-channel">Canal de YouTube</a></li>
+      <li><a href="mailto:contact@example.com">contact@example.com</a></li>
+      <li><a href="en/privacy.html" hreflang="en" lang="en">English</a></li>
+    </ul>
+    <p>Última actualización: <time datetime="2026-10-28">28 de octubre de 2026</time></p>
+    <p>Voz sin Firma no está afiliado a Google ni a YouTube. YouTube es una marca de Google LLC.</p>
+  </div>
+</footer>
+</body>
+</html>
